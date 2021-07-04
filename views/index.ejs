@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <div class="container"> 
+        <div class="jumbotron my-3">
+            <h1>
+                Aushadhi!!
+            </h1>
+        </div>
+        <div class="row">
+            <% products.forEach((product)=>{ %>
+                <div class="col-md-3 col-sm-6">
+
+                    <div class="img-thumbnail my-2 text-center">
+                        <img class="img-fluid" src="<%= product.image %> " > 
+                        <div class="caption">
+                            <h4> <%= product.name %> </h4>
+                        </div>
+                        <p>By: <%= product.manufacturer %> </p>
+                        <p class="card-text"> <% product.tags.forEach((tag) => { %>
+                          node   <%= tag %> 
+                       <% }); %>  </p>
+                       <strong>Price: ₹ <%= product.price %>  </strong><br>
+                        <a href="/product/<%= product.id %> " class="btn btn-sm btn-primary">add to cart</a>
+                    </div>
+                </div>
+            <% }); %> 
+    </div>
+
+    </div>
+
+    
+</body>
+</html>
